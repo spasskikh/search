@@ -18,9 +18,13 @@ You need to implement application that uses third party api Nominatim API and cr
 - To get all addresses by coordinates that have been stored in DB. The application must be called by REST API for receiving all addresses from Nominatim API  by saved coordinates.
 
 ## Testing
+
+### Build and run an image
 `docker build -t overonix/search .`
 
 `docker run -p 8080:8080 overonix/search`
 
+### Request endpoints
 `curl -u admin:admin -X POST localhost:8080/Kyiv,Ukraine`
+
 `curl -u admin:admin -X GET localhost:8080`
