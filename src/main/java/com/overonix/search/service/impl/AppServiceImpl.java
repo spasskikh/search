@@ -5,6 +5,7 @@ import com.overonix.search.entity.Coordinates;
 import com.overonix.search.service.AppService;
 import com.overonix.search.service.CoordinatesService;
 import com.overonix.search.service.NominatimService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,6 +24,7 @@ public class AppServiceImpl implements AppService {
         this.nominatimService = nominatimService;
     }
 
+    @Cacheable("coordinates")
     @Transactional
     @Override
     public List<Coordinates> searchAndSave(String query) {
